@@ -1,0 +1,322 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<robot rpa="false" generated="20200824 19:43:49.912" generator="Robot 3.2.1 (Python 2.7.14 on win32)">
+<suite source="C:\Users\AMOL\Desktop\RF\Job_Bar" id="s1" name="Job Bar">
+<suite source="C:\Users\AMOL\Desktop\RF\Job_Bar\Test_Cases" id="s1-s1" name="Test Cases">
+<suite source="C:\Users\AMOL\Desktop\RF\Job_Bar\Test_Cases\Test_Case.robot" id="s1-s1-s1" name="Test Case">
+<test id="s1-s1-s1-t1" name="TC_03">
+<kw name="Verifying Elements" library="Keywords">
+<kw name="LogIn On Portal" library="Keywords">
+<kw name="Open Browser" library="SeleniumLibrary">
+<doc>Opens a new browser instance to the optional ``url``.</doc>
+<arguments>
+<arg>${url}</arg>
+<arg>${browser}</arg>
+</arguments>
+<msg timestamp="20200824 19:43:50.198" level="INFO">Opening browser 'chrome' to base url 'http://demowebshop.tricentis.com'.</msg>
+<status status="PASS" endtime="20200824 19:43:59.466" starttime="20200824 19:43:50.197"></status>
+</kw>
+<kw name="Maximize Browser Window" library="SeleniumLibrary">
+<doc>Maximizes current browser window.</doc>
+<status status="PASS" endtime="20200824 19:44:01.602" starttime="20200824 19:43:59.467"></status>
+</kw>
+<kw name="Click Element" library="SeleniumLibrary">
+<doc>Click the element identified by ``locator``.</doc>
+<arguments>
+<arg>${LOGIN_PAGE_LINK}</arg>
+</arguments>
+<msg timestamp="20200824 19:44:01.604" level="INFO">Clicking element '//a[@class='ico-login']'.</msg>
+<status status="PASS" endtime="20200824 19:44:02.197" starttime="20200824 19:44:01.603"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${ENTER_EMAIL_TEXTBOX}</arg>
+<arg>${email}</arg>
+</arguments>
+<msg timestamp="20200824 19:44:02.198" level="INFO">Typing text 'g007@gmail.com' into text field '//input[@id='Email']'.</msg>
+<status status="PASS" endtime="20200824 19:44:02.298" starttime="20200824 19:44:02.198"></status>
+</kw>
+<kw name="Input Text" library="SeleniumLibrary">
+<doc>Types the given ``text`` into the text field identified by ``locator``.</doc>
+<arguments>
+<arg>${ENTER_PASSWORD_TEXTBOX}</arg>
+<arg>${password}</arg>
+</arguments>
+<msg timestamp="20200824 19:44:02.299" level="INFO">Typing text 'xyz123' into text field '//input[@id='Password']'.</msg>
+<status status="PASS" endtime="20200824 19:44:02.403" starttime="20200824 19:44:02.298"></status>
+</kw>
+<kw name="Click Button" library="SeleniumLibrary">
+<doc>Clicks the button identified by ``locator``.</doc>
+<arguments>
+<arg>${LOGIN_BUTTON}</arg>
+</arguments>
+<msg timestamp="20200824 19:44:02.404" level="INFO">Clicking button '//input[@value='Log in']'.</msg>
+<status status="PASS" endtime="20200824 19:44:03.384" starttime="20200824 19:44:02.403"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>LogIn Successful</arg>
+</arguments>
+<status status="PASS" endtime="20200824 19:44:03.385" starttime="20200824 19:44:03.384"></status>
+</kw>
+<status status="PASS" endtime="20200824 19:44:03.386" starttime="20200824 19:43:50.196"></status>
+</kw>
+<kw name="Get WebElements" library="SeleniumLibrary">
+<doc>Returns a list of WebElement objects matching the ``locator``.</doc>
+<arguments>
+<arg>${TOP_MENU_LIST}</arg>
+</arguments>
+<assign>
+<var>@{listofmenu}</var>
+</assign>
+<msg timestamp="20200824 19:44:03.415" level="INFO">@{listofmenu} = [ &lt;selenium.webdriver.remote.webelement.WebElement (session="99d3e05fd271711b762d24a9257d25f4", element="643f3688-14ff-40c9-a38d-c9a2eaf9e537")&gt; | &lt;selenium.webdriver.remote.webelement.WebElement (ses...</msg>
+<status status="PASS" endtime="20200824 19:44:03.415" starttime="20200824 19:44:03.386"></status>
+</kw>
+<kw type="for" name="${item} IN [ @{listofmenu} ]">
+<kw type="foritem" name="${item} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;99d3e05fd271711b762d24a9257d25f4&quot;, element=&quot;643f3688-14ff-40c9-a38d-c9a2eaf9e537&quot;)&gt;">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>${item}</arg>
+</arguments>
+<assign>
+<var>${name}</var>
+</assign>
+<msg timestamp="20200824 19:44:03.435" level="INFO">${name} = BOOKS</msg>
+<status status="PASS" endtime="20200824 19:44:03.435" starttime="20200824 19:44:03.416"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${name}</arg>
+</arguments>
+<status status="PASS" endtime="20200824 19:44:03.437" starttime="20200824 19:44:03.436"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${names}</arg>
+<arg>${name}</arg>
+</arguments>
+<status status="PASS" endtime="20200824 19:44:03.440" starttime="20200824 19:44:03.438"></status>
+</kw>
+<status status="PASS" endtime="20200824 19:44:03.441" starttime="20200824 19:44:03.416"></status>
+</kw>
+<kw type="foritem" name="${item} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;99d3e05fd271711b762d24a9257d25f4&quot;, element=&quot;aa1520c3-1529-4e2e-8515-dbb7f6f12c24&quot;)&gt;">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>${item}</arg>
+</arguments>
+<assign>
+<var>${name}</var>
+</assign>
+<msg timestamp="20200824 19:44:03.468" level="INFO">${name} = COMPUTERS</msg>
+<status status="PASS" endtime="20200824 19:44:03.468" starttime="20200824 19:44:03.443"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${name}</arg>
+</arguments>
+<status status="PASS" endtime="20200824 19:44:03.469" starttime="20200824 19:44:03.468"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${names}</arg>
+<arg>${name}</arg>
+</arguments>
+<status status="PASS" endtime="20200824 19:44:03.470" starttime="20200824 19:44:03.469"></status>
+</kw>
+<status status="PASS" endtime="20200824 19:44:03.470" starttime="20200824 19:44:03.443"></status>
+</kw>
+<kw type="foritem" name="${item} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;99d3e05fd271711b762d24a9257d25f4&quot;, element=&quot;54190cc8-52e4-4810-8c78-d049094bd863&quot;)&gt;">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>${item}</arg>
+</arguments>
+<assign>
+<var>${name}</var>
+</assign>
+<msg timestamp="20200824 19:44:03.489" level="INFO">${name} = ELECTRONICS</msg>
+<status status="PASS" endtime="20200824 19:44:03.491" starttime="20200824 19:44:03.471"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${name}</arg>
+</arguments>
+<status status="PASS" endtime="20200824 19:44:03.493" starttime="20200824 19:44:03.492"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${names}</arg>
+<arg>${name}</arg>
+</arguments>
+<status status="PASS" endtime="20200824 19:44:03.495" starttime="20200824 19:44:03.494"></status>
+</kw>
+<status status="PASS" endtime="20200824 19:44:03.496" starttime="20200824 19:44:03.470"></status>
+</kw>
+<kw type="foritem" name="${item} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;99d3e05fd271711b762d24a9257d25f4&quot;, element=&quot;fc874b2c-28d2-4cfc-9f83-0a03fecd1468&quot;)&gt;">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>${item}</arg>
+</arguments>
+<assign>
+<var>${name}</var>
+</assign>
+<msg timestamp="20200824 19:44:03.516" level="INFO">${name} = APPAREL &amp; SHOES</msg>
+<status status="PASS" endtime="20200824 19:44:03.516" starttime="20200824 19:44:03.498"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${name}</arg>
+</arguments>
+<status status="PASS" endtime="20200824 19:44:03.534" starttime="20200824 19:44:03.534"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${names}</arg>
+<arg>${name}</arg>
+</arguments>
+<status status="PASS" endtime="20200824 19:44:03.535" starttime="20200824 19:44:03.535"></status>
+</kw>
+<status status="PASS" endtime="20200824 19:44:03.535" starttime="20200824 19:44:03.497"></status>
+</kw>
+<kw type="foritem" name="${item} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;99d3e05fd271711b762d24a9257d25f4&quot;, element=&quot;2e645893-02b5-4b69-ad76-99a58a0d1d09&quot;)&gt;">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>${item}</arg>
+</arguments>
+<assign>
+<var>${name}</var>
+</assign>
+<msg timestamp="20200824 19:44:03.552" level="INFO">${name} = DIGITAL DOWNLOADS</msg>
+<status status="PASS" endtime="20200824 19:44:03.553" starttime="20200824 19:44:03.536"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${name}</arg>
+</arguments>
+<status status="PASS" endtime="20200824 19:44:03.554" starttime="20200824 19:44:03.553"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${names}</arg>
+<arg>${name}</arg>
+</arguments>
+<status status="PASS" endtime="20200824 19:44:03.554" starttime="20200824 19:44:03.554"></status>
+</kw>
+<status status="PASS" endtime="20200824 19:44:03.555" starttime="20200824 19:44:03.536"></status>
+</kw>
+<kw type="foritem" name="${item} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;99d3e05fd271711b762d24a9257d25f4&quot;, element=&quot;886ba519-7c42-4e61-b8d1-5d33deee6209&quot;)&gt;">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>${item}</arg>
+</arguments>
+<assign>
+<var>${name}</var>
+</assign>
+<msg timestamp="20200824 19:44:03.572" level="INFO">${name} = JEWELRY</msg>
+<status status="PASS" endtime="20200824 19:44:03.572" starttime="20200824 19:44:03.555"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${name}</arg>
+</arguments>
+<status status="PASS" endtime="20200824 19:44:03.575" starttime="20200824 19:44:03.573"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${names}</arg>
+<arg>${name}</arg>
+</arguments>
+<status status="PASS" endtime="20200824 19:44:03.577" starttime="20200824 19:44:03.576"></status>
+</kw>
+<status status="PASS" endtime="20200824 19:44:03.578" starttime="20200824 19:44:03.555"></status>
+</kw>
+<kw type="foritem" name="${item} = &lt;selenium.webdriver.remote.webelement.WebElement (session=&quot;99d3e05fd271711b762d24a9257d25f4&quot;, element=&quot;febb65b6-434e-4467-bba4-5140daa4c9dc&quot;)&gt;">
+<kw name="Get Text" library="SeleniumLibrary">
+<doc>Returns the text value of the element identified by ``locator``.</doc>
+<arguments>
+<arg>${item}</arg>
+</arguments>
+<assign>
+<var>${name}</var>
+</assign>
+<msg timestamp="20200824 19:44:03.599" level="INFO">${name} = GIFT CARDS</msg>
+<status status="PASS" endtime="20200824 19:44:03.599" starttime="20200824 19:44:03.579"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>${name}</arg>
+</arguments>
+<status status="PASS" endtime="20200824 19:44:03.600" starttime="20200824 19:44:03.599"></status>
+</kw>
+<kw name="Append To List" library="Collections">
+<doc>Adds ``values`` to the end of ``list``.</doc>
+<arguments>
+<arg>${names}</arg>
+<arg>${name}</arg>
+</arguments>
+<status status="PASS" endtime="20200824 19:44:03.601" starttime="20200824 19:44:03.601"></status>
+</kw>
+<status status="PASS" endtime="20200824 19:44:03.602" starttime="20200824 19:44:03.579"></status>
+</kw>
+<status status="PASS" endtime="20200824 19:44:03.602" starttime="20200824 19:44:03.416"></status>
+</kw>
+<kw name="Should Be Equal" library="BuiltIn">
+<doc>Fails if the given objects are unequal.</doc>
+<arguments>
+<arg>'@{list}'</arg>
+<arg>'@{names}'</arg>
+</arguments>
+<status status="PASS" endtime="20200824 19:44:03.603" starttime="20200824 19:44:03.602"></status>
+</kw>
+<kw name="Log To Console" library="BuiltIn">
+<doc>Logs the given message to the console.</doc>
+<arguments>
+<arg>Verification Done Successfully</arg>
+</arguments>
+<status status="PASS" endtime="20200824 19:44:03.604" starttime="20200824 19:44:03.603"></status>
+</kw>
+<status status="PASS" endtime="20200824 19:44:03.604" starttime="20200824 19:43:50.196"></status>
+</kw>
+<status status="PASS" endtime="20200824 19:44:03.604" critical="yes" starttime="20200824 19:43:50.195"></status>
+</test>
+<status status="PASS" endtime="20200824 19:44:03.608" starttime="20200824 19:43:49.957"></status>
+</suite>
+<status status="PASS" endtime="20200824 19:44:03.613" starttime="20200824 19:43:49.957"></status>
+</suite>
+<status status="PASS" endtime="20200824 19:44:03.616" starttime="20200824 19:43:49.941"></status>
+</suite>
+<statistics>
+<total>
+<stat fail="0" pass="1">Critical Tests</stat>
+<stat fail="0" pass="1">All Tests</stat>
+</total>
+<tag>
+</tag>
+<suite>
+<stat fail="0" id="s1" name="Job Bar" pass="1">Job Bar</stat>
+<stat fail="0" id="s1-s1" name="Test Cases" pass="1">Job Bar.Test Cases</stat>
+<stat fail="0" id="s1-s1-s1" name="Test Case" pass="1">Job Bar.Test Cases.Test Case</stat>
+</suite>
+</statistics>
+<errors>
+</errors>
+</robot>
